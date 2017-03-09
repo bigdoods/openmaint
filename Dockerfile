@@ -12,6 +12,8 @@ RUN set -x \
   && cd openmaint \
   && cp extras/tomcat-libs/6.0/postgresql-9.1-901.jdbc4.jar $CATALINA_HOME/lib/ \
   && cp scheduler/scheduler-utils-0.1.jar $CATALINA_HOME/lib/ \
-  && cp openmaint-*.war $CATALINA_HOME/webapps/openmaint.war
+  && cp openmaint-*.war $CATALINA_HOME/webapps/ROOT.war
+
+RUN rm -rf $CATALINA_HOME/webapps/ROOT
 
 EXPOSE 8080

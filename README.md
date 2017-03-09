@@ -1,21 +1,14 @@
-docker-openmaint
-================
+# Openmaint
+_Facility Management Software_
 
-Docker image for openMAINT demo application.
+### About
+OpenMAINT demo application.
 
-[openMAINT](http://openmaint.org) is open source property management software. The installation process is arduous, so this docker image mimics the installation directions and loads the sample database for the purpose of testing out the software.
+[openMAINT](http://openmaint.org) is an open source property management software. The demo loads a sample database for the purpose of testing out the software.
 
-Builds on:
-* https://github.com/docker-library/postgres/blob/master/9.1/Dockerfile
-* https://github.com/docker-library/tomcat/blob/master/7-jre8/Dockerfile
+### Instructions
 
-Usage:
-
-    docker-compose up
-
-Even with all the setup in docker, there is still some first run configuration for openMAINT.
-
-* Visit: http://0.0.0.0:8080/openmaint/
+To configure openMAINT:
 
 * Pick a language, click Next.
 
@@ -25,9 +18,17 @@ Even with all the setup in docker, there is still some first run configuration f
 * Port: 5432
 * Super user: postgres
 * Password: postgres
+
 * Test the connection if you like, then click Finish.
 
-Finally, you can login to the application:
+Login to the application:
 * Username: admin
 * Password: admin
+
+### Github
+
+https://github.com/chabala/docker-openmaint
+
+### Screenshots
+[![](screenshots/openmaint1-small.png)](screenshots/openmaint1.png) [![](screenshots/openmaint2-small.png)](screenshots/openmaint2.png)
 

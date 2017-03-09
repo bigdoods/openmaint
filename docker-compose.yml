@@ -1,9 +1,38 @@
-openmaint:
-  build: .
-  ports:
-    - "8080:8080"
-  links:
-    - postgres
-postgres:
-  build: postgres
+version: '2'
+services:
+
+    main:
+        build: .
+        image: openmaint
+        ports:
+            - 8080
+        environment:
+            - VIRTUAL_HOST
+            - VIRTUAL_PORT=8080
+        links:
+            - postgres
+        networks:
+            - front
+            - back
+            - default
+
+    postgres:
+      build: postgres
+
+    timer:
+        image: bigdoods/timer
+        volumes:
+            - "/var/run/docker.sock:/var/run/docker.sock"
+        environment:
+            - TIMEOUT=1800000
+        networks:
+            - default
+
+networks:
+    front:
+        external:
+            name: "puffin_front"
+    back:
+        external:
+            name: "puffin_back"
 
